@@ -10,7 +10,7 @@ const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
 // Slash command endpoint
 router.post('/slash', async (req, res) => {
   try {
-    console.log('Slash command received:', req.body); // ✅ Debug line
+    console.log('Slash command received:', req.body); //  Debug line
 
     const { trigger_id } = req.body;
     if (!trigger_id) {
@@ -135,7 +135,7 @@ router.post('/interact', async (req, res) => {
     const { action_id, value } = action;
     const { requesterId } = JSON.parse(value);
 
-    const resultText = action_id === 'approve' ? 'approved ✅' : 'rejected ❌';
+    const resultText = action_id === 'approve' ? 'approved ' : 'rejected ';
 
     // Notify requester
     try {
